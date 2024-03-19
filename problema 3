@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+ifstream f("date.in");
+
+int interval (int v[100],int n)
+{
+    int i,k=2;
+    f>>n;
+    for(int i=0;i<n;i++)
+        f>>v[i];
+    for(int i=1;i<n-1;i++)
+    {
+        if((v[i]>=v[0] && v[i]<=v[n-1]) || (v[i]<=v[0] && v[i]>=v[n-1]))
+            k++;
+    }
+    return k;
+}
+
+int main()
+{
+    int v[100],n;
+    cout<<interval(v,n);
+    return 0;
+}
