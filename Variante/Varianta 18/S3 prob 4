@@ -1,0 +1,15 @@
+#include <fstream.h>
+ifstream f("numere.in");
+void main() {
+  int k, x, p = 0, gasit = 0;
+  cin >> k;
+  while (f >> x)
+    if (k < x)
+      p++;
+    else if (k == x)
+      gasit = 1;
+  if (gasit)
+    cout << p + 1;
+  else
+    cout << "nu exista";
+}
