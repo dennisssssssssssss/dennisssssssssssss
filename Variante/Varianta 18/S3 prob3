@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int count(float a[100], int n){
+	
+	int i;
+	float sumaEl = 0, medieAritm;
+		
+	for (i = 0; i < n; i++)
+		sumaEl += a[i];
+
+	medieAritm = sumaEl/n;
+	
+	int nrEl = 0;
+		
+	for (i = 0; i < n; i++)
+		if (a[i] >= medieAritm)
+			nrEl++;
+
+	return nrEl;
+
+}
+
+int main(){
+	
+	int n;
+	cin>>n;
+
+	int i;
+	float a[100];
+	for (i = 0; i < n; i++)
+		cin>>a[i];
+
+	cout<<count(a,n);
+	return 0;
+}
