@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+ifstream f("date.in");
+
+
+int main()
+{
+    int x,y,i=0;
+    int fr[10]={0};
+    while(f>>x)
+        while(x)
+        {
+            fr[x%10]++;
+            x=x/10;
+        }
+    y=9;
+    while(y>=0)
+    {
+        for(int i=1; i<=fr[y]; i++)
+            cout<<y;
+        y--;
+    }
+    cout<<endl;
+    return 0;
+}
