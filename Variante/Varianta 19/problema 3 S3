@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+ifstream f("date.in");
+
+void aranjare(float a[101],int n)
+{
+   for(int i=0;i<n;i++)
+    for(int j=i+1;j<=n;j++)
+   {
+       if(a[j]>a[j+1])
+        swap(a[j],a[j+1]);
+
+   }
+}
+int main()
+{
+    int i,n;
+    float a[101];
+    f>>n;
+    for(int i=0;i<n;i++)
+        f>>a[i];
+    aranjare(a,n);
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<" ";
+    return 0;
+}
