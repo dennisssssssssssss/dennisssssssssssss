@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+void NrImp(int x,int y,int &nr)
+{
+    x=4,y=50;
+    int d,k=0,i;
+    nr=0;
+    for(i=x; i<=y; i++)
+    {
+        k=0;
+        for(int d=1; d<=i; d++)
+            if(i%d==0 && d%2==1)
+                k++;
+        if(k==3)
+        {
+            cout<<i<<" ";
+            nr++;
+        }
+    }
+    cout<<endl;
+}
+
+int main()
+{
+    int nr;
+    NrImp(4,50,nr);
+    cout<<nr;
+    return 0;
+}
