@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void Putere(int n,int &x,int &p)
+{
+    cin>>n;
+    int d,mini=99,put,prd,ok=0;
+    p=0;
+    for(int d=2; d<=n && ok==0; d++)
+    {
+        if(n%d==0)
+        {
+            prd=1;
+            put=0;
+            while(prd<n)
+            {
+                prd=prd*d;
+                put++;
+            }
+            if(prd==n)
+            {
+                p=put;
+                x=d;
+                ok=1;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int n,x=2,p=1;
+    Putere(n,x,p);
+    cout<<x<<" "<<p;
+    return 0;
+}
