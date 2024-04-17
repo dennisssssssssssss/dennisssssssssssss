@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void schimb(int &n,int x,int p)
+{
+    int k=0,nr=1;
+    int copie=n;
+    n=0;
+    while(copie)
+    {
+        int c=copie%10;
+        if(k==p)
+            n=n+x*nr;
+        else
+            n=n+c*nr;
+        nr=nr*10;
+        copie=copie/10;
+        k++;
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    schimb(n,6,3);
+    cout<<n;
+    return 0;
+}
