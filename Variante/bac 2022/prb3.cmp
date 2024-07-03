@@ -1,0 +1,24 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream f("numere.in");
+
+
+int main()
+{
+    int a,k=0,ok=1;
+    int x,y,b;
+    f>>x>>y;
+    while(f>>a && ok)
+    {
+        if(b!=a && a>=x && a<=y)
+            k++;
+        if(a>y)
+            ok=0;
+        b=a;
+    }
+    cout<<k;
+    return 0;
+}
