@@ -1,0 +1,28 @@
+int main()
+{
+    int x,maxi=0,c=0,l=0,k=0,nr1=0,nr2=0;
+    while(f>>x)
+    {
+        c=x%10;
+        l=x/10;
+        if(c>maxi)
+        {
+            maxi=c;
+            k=1;
+            nr1=nr2=x;
+        }
+        if(l>maxi)
+        {
+            maxi=l;
+            k=1;
+            nr1=nr2=x;
+        }
+        else if(c==maxi || l==maxi)
+        {
+            k++;
+            nr2=x;
+        }
+    }
+    if(k>=2)
+        cout<<nr1<<" "<<nr2;
+    else cout<<"nu exista";
